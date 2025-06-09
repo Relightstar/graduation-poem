@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>启程：致吾师·同窗·己心·未来 (最终版)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Noto+Serif+SC:wght@400;700&display=swap');
+
+        :root {
+            --bg-color: #0a192f;
+            --text-color: #ccd6f6;
+            --accent-color: #ffc107;
+            --speaker-color: #8892b0;
+            --highlight-color: #64ffda;
+
+            /* 为每位朗诵者定义专属颜色 */
+            --color-zhao: #82aaff; /* 赵德宪 - 矢车菊蓝 */
+            --color-su:   #c3e88d; /* 苏霞   - 青柠绿 */
+            --color-yang: #89ddff; /* 杨伟浩 - 天空蓝 */
+            --color-wu:   #c792ea; /* 乌云   - 薰衣草紫 */
+            --color-shao: #f06292; /* 邵菁华 - 玫瑰粉 */
+            --color-peng: #ffcb6b; /* 彭坤   - 琥珀橙 */
+            --color-ling: #ffab91; /* 杨玲   - 珊瑚粉 */
+            --color-zhang:#a5d6a7; /* 张伟岳 - 薄荷绿 */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Noto Sans SC', 'Noto Serif SC', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.9;
+            overflow-x: hidden;
+            background-image:
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+                radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+            background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+            background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+            animation: stars-move 180s linear infinite;
+        }
+
+        @keyframes stars-move {
+            from { background-position: 0 0, 40px 60px, 130px 270px, 70px 100px; }
+            to { background-position: -1000px 500px, -840px 460px, -1130px 770px, -570px 600px; }
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 50px 25px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 1px solid rgba(255, 193, 7, 0.3);
+            padding-bottom: 30px;
+        }
+
+        h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 3em;
+            color: var(--accent-color);
+            font-weight: 700;
+            margin-bottom: 0.2em;
+            letter-spacing: 0.1em;
+            text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: var(--speaker-color);
+            margin-bottom: 2em;
+        }
+
+        .speakers-list {
+            font-size: 0.9em;
+            color: var(--speaker-color);
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid var(--speaker-color);
+            border-radius: 20px;
+        }
+
+        .speakers-list strong {
+            color: var(--text-color);
+            font-weight: normal;
+        }
+        
+        .section {
+            margin-bottom: 4em;
+        }
+
+        .line {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.2em;
+            font-size: 1.2em;
+        }
+
+        .speaker {
+            flex: 0 0 70px;
+            font-weight: 700;
+            color: var(--speaker-color);
+            text-align: right;
+            padding-right: 20px;
+            white-space: nowrap;
+        }
+
+        .text {
+            flex: 1;
+            font-family: 'Noto Serif SC', serif;
+        }
+        
+        /* 朗诵者颜色应用 (增强清晰度版) */
+        .speaker-zhao .text { color: var(--color-zhao); text-shadow: 0 0 2px rgba(255, 255, 255, 0.7), 0 0 9px var(--color-zhao); }
+        .speaker-su .text   { color: var(--color-su);   text-shadow: 0 0 2px rgba(255, 255, 255, 0.7), 0 0 9px var(--color-su); }
+        .speaker-yang .text { color: var(--color-yang); text-shadow: 0 0 2px rgba(255, 255, 255, 0.7), 0 0 9px var(--color-yang); }
+        .speaker-wu .text   { color: var(--color-wu);   text-shadow: 0 0 2px rgba(255, 255, 255, 0.7), 0 0 9px var(--color-wu); }
+        .speaker-shao .text { color: var(--color-shao); text-shadow: 0 0 2px rgba(255, 255, 255, 0.7), 0 0 9px var(--color-shao); }
+        .speaker-peng .text { color: var(--color-peng); text-shadow: 0 0 2px rgba(255, 255, 255, 0.7), 0 0 9px var(--color-peng); }
+        .speaker-ling .text { color: var(--color-ling); text-shadow: 0 0 2px rgba(255, 255, 255, 0.7), 0 0 9px var(--color-ling); }
+        .speaker-zhang .text{ color: var(--color-zhang);text-shadow: 0 0 2px rgba(255, 255, 255, 0.7), 0 0 9px var(--color-zhang); }
+
+        /* 双人合诵的渐变文字效果 */
+        .speaker-zhaosu .text { background: linear-gradient(90deg, var(--color-zhao), var(--color-su)); }
+        .speaker-yangwu .text { background: linear-gradient(90deg, var(--color-yang), var(--color-wu)); }
+        .speaker-lingzhang .text { background: linear-gradient(90deg, var(--color-ling), var(--color-zhang)); }
+        .speaker-shaopeng .text { background: linear-gradient(90deg, var(--color-shao), var(--color-peng)); }
+        
+        .speaker-zhaosu .text, .speaker-yangwu .text, .speaker-lingzhang .text, .speaker-shaopeng .text {
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+
+        .group-recital {
+            text-align: center;
+            font-style: italic;
+            margin: 2em auto;
+            padding: 1em 1.5em;
+            border-left: 3px solid var(--accent-color);
+            border-right: 3px solid var(--accent-color);
+            background: rgba(255, 193, 7, 0.05);
+            max-width: 90%;
+        }
+
+        .group-recital .speaker {
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 0.5em;
+            padding-right: 0;
+            font-size: 1.1em;
+        }
+        
+        .group-recital .text {
+             font-family: 'Noto Sans SC', sans-serif;
+             font-weight: 700;
+             font-size: 1.3em;
+             letter-spacing: 0.05em;
+             color: var(--text-color);
+        }
+        .group-recital.all-together .text {
+            color: var(--accent-color);
+            text-shadow: 0 0 2px rgba(255, 255, 255, 0.8), 0 0 10px var(--accent-color);
+        }
+
+        .quote {
+            color: var(--highlight-color);
+            font-weight: bold;
+            font-style: italic;
+            text-shadow: 0 0 2px rgba(255,255,255,0.7), 0 0 7px var(--highlight-color);
+        }
+
+        .divider {
+            height: 1px;
+            width: 80%;
+            background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+            margin: 4em auto;
+            opacity: 0.5;
+        }
+        
+        /* --- 最终祝福语样式 (2x2矩阵版) --- */
+        .final-blessing-section {
+            display: flex;
+            justify-content: center; /* 居中整个网格 */
+            flex-wrap: wrap; /* 允许换行，形成多行 */
+            margin-top: 4em;
+        }
+
+        .final-blessing-item {
+            flex: 0 0 45%; /* 每个项目占45%宽度，一行可以放两个 */
+            margin: 15px 2%; /* 上下和左右的间距 */
+            text-align: center;
+            min-height: 350px; /* 确保所有块高度一致，对齐美观 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .blessing-intro {
+            font-size: 1.2em;
+            margin-bottom: 1.5em;
+            white-space: nowrap; /* 确保引言不换行 */
+        }
+
+        .intro-part1 {
+            color: var(--speaker-color); /* “话筒四人”部分的颜色 */
+        }
+
+        .intro-part2 {
+            color: var(--accent-color); /* “祝福XX”部分的颜色 */
+            font-weight: bold;
+        }
+
+        .blessing-text-horizontal {
+            color: var(--accent-color); /* 垂直文字的颜色 */
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.8em;
+            letter-spacing: 0.2em;
+            line-height: 1.6;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.8), 0 0 12px var(--accent-color);
+            margin: 0 auto; /* 使垂直文字在块内居中 */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>《启程》</h1>
+            <p class="subtitle">致吾师 · 同窗 · 己心 · 未来</p>
+            <div class="speakers-list">
+                <strong>朗诵者:</strong> 邵菁华、苏霞、赵德宪、乌云、杨玲、张伟岳、杨伟浩、彭坤
+            </div>
+        </header>
+
+        <!-- ...前面部分保持不变... -->
+        <div class="section" id="part1">
+            <div class="line speaker-zhao"><span class="speaker">赵：</span><span class="text">当论文的最后一页轻轻合上，</span></div>
+            <div class="line speaker-zhao"><span class="speaker">赵：</span><span class="text">当答辩的余音在教室回荡；</span></div>
+            <div class="line speaker-su"><span class="speaker">苏：</span><span class="text">亲爱的同窗，亲爱的战友，</span></div>
+            <div class="line speaker-su"><span class="speaker">苏：</span><span class="text">我们站在 “毕业”的港口回望；</span></div>
+            <div class="line speaker-zhao"><span class="speaker">赵：</span><span class="text">还记得吗？初入校园的迷惘，</span></div>
+            <div class="line speaker-zhao"><span class="speaker">赵：</span><span class="text">公式与模型，像陌生的海洋；</span></div>
+            <div class="line speaker-su"><span class="speaker">苏：</span><span class="text">案例的漩涡，数据的浪潮，</span></div>
+            <div class="line speaker-su"><span class="speaker">苏：</span><span class="text">学习的小船，也曾风雨飘摇。</span></div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section" id="part2">
+            <div class="line speaker-yang"><span class="speaker">杨：</span><span class="text">师者，如巍巍灯塔，穿透商海的迷雾沉沉。</span></div>
+            <div class="line speaker-yang"><span class="speaker">杨：</span><span class="text">深邃的目光，将晦涩的理论一一厘清。</span></div>
+            <div class="line speaker-wu"><span class="speaker">乌：</span><span class="text">波特五力，蓝海红海，在您指尖化作星辰，</span></div>
+            <div class="line speaker-wu"><span class="speaker">乌：</span><span class="text">照亮我们探索未知的航程。</span></div>
+            <div class="line speaker-yang"><span class="speaker">杨：</span><span class="text">您不仅是知识的布道者，更是品格的铸魂人，</span></div>
+            <div class="line speaker-yang"><span class="speaker">杨：</span><span class="text">教会我们：商道即人道，诚信是立身之本。</span></div>
+            <div class="line speaker-wu"><span class="speaker">乌：</span><span class="text">敬爱的老师！您以心血为墨，以岁月为笔，</span></div>
+            <div class="line speaker-wu"><span class="speaker">乌：</span><span class="text">在我们人生的画卷上，添上最厚重的首经贸MBA烙印。</span></div>
+            <div class="group-recital">
+                <span class="speaker">二人合：</span>
+                <span class="text">今日，我们深深鞠躬，道一声：</span>
+            </div>
+            <div class="group-recital all-together">
+                <span class="speaker">八人齐：</span>
+                <span class="text">“老师，您辛苦了！师恩难忘，永铭于心！”</span>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section" id="part3">
+            <div class="line speaker-shao"><span class="speaker">邵：</span><span class="text">亲爱的同窗，亲爱的战友！</span></div>
+            <div class="line speaker-shao"><span class="speaker">邵：</span><span class="text">还记得吗？早八晚九的红庙教学楼里，</span></div>
+            <div class="line speaker-peng"><span class="speaker">彭：</span><span class="text">管理前沿的浪潮，宏观经济的天空；</span></div>
+            <div class="line speaker-peng"><span class="speaker">彭：</span><span class="text">战略管理的罗盘，企业伦理的灯塔，</span></div>
+            <div class="line speaker-shao"><span class="speaker">邵：</span><span class="text">风险内控的堤坝，财务报表的星光；</span></div>
+            <div class="line speaker-shao"><span class="speaker">邵：</span><span class="text">组织行为的密码，市场营销的战场，</span></div>
+            <div class="line speaker-peng"><span class="speaker">彭：</span><span class="text">知识不再是碎片，是握在手中的剑与桨；</span></div>
+            <div class="line speaker-peng"><span class="speaker">彭：</span><span class="text">MBA的烙印，已深刻在心上，</span></div>
+            <div class="line speaker-shao"><span class="speaker">邵：</span><span class="text">从陌生到默契，从同窗到知己；</span></div>
+            <div class="line speaker-shao"><span class="speaker">邵：</span><span class="text">这份在挑战中淬炼的情谊纯粹如金，</span></div>
+            <div class="group-recital">
+                <span class="speaker">二人合：</span>
+                <span class="text">愿这份同窗情谊，如山高，似水长；<br>成为未来征途上，最温暖的力量。</span>
+            </div>
+            <div class="group-recital all-together">
+                <span class="speaker">八人齐：</span>
+                <span class="text">“兄弟姐妹，感谢一路有你同行！”</span>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section" id="part4">
+            <div class="line speaker-ling"><span class="speaker">玲：</span><span class="text">也请，让我们对自己，道一声感谢！</span></div>
+            <div class="line speaker-ling"><span class="speaker">玲：</span><span class="text">感谢那个咬牙坚持的自己，</span></div>
+            <div class="line speaker-ling"><span class="speaker">玲：</span><span class="text">在繁重课业与工作压力间，寻找平衡点。</span></div>
+            <div class="line speaker-zhang"><span class="speaker">张：</span><span class="text">感谢那个勇于归零的自己，</span></div>
+            <div class="line speaker-zhang"><span class="speaker">张：</span><span class="text">放下过往的光环，拥抱未知的淬炼。</span></div>
+            <div class="line speaker-zhang"><span class="speaker">张：</span><span class="text">在无数个深夜伏案的灯光下，</span></div>
+            <div class="line speaker-ling"><span class="speaker">玲：</span><span class="text">在一次次自我怀疑的焦虑中，</span></div>
+            <div class="line speaker-ling"><span class="speaker">玲：</span><span class="text"><span class="quote">“再坚持一下！”</span> (重复：<span class="quote">“再坚持一下！”</span>)</span></div>
+            <div class="line speaker-zhang"><span class="speaker">张：</span><span class="text">我们重塑思维，打破认知的边界，</span></div>
+            <div class="line speaker-zhang"><span class="speaker">张：</span><span class="text">从执行者，成长为有战略眼光的思考者。</span></div>
+            <div class="line speaker-ling"><span class="speaker">玲：</span><span class="text">我们磨砺心志，在压力下保持韧性，</span></div>
+            <div class="line speaker-ling"><span class="speaker">玲：</span><span class="text">从学习者，蜕变为引领团队的领导者。</span></div>
+            <div class="group-recital">
+                <span class="speaker">二人合：</span>
+                <span class="text">感谢自己，不曾辜负这宝贵的时光。<br>感谢自己，用汗水浇灌出今天的成长。</span>
+            </div>
+            <div class="group-recital all-together">
+                <span class="speaker">八人齐：</span>
+                <span class="text">学位帽的重量，是我们对自己，最好的褒奖。</span>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+        
+        <div class="section" id="part5">
+            <div class="line speaker-zhaosu"><span class="speaker">赵苏：</span><span class="text">告别校园，不是终点，而是崭新的起点，</span></div>
+            <div class="line speaker-zhaosu"><span class="speaker">赵苏：</span><span class="text">知识的行囊已装满，同窗的情谊系心间；</span></div>
+            <div class="line speaker-yangwu"><span class="speaker">杨乌：</span><span class="text">让我们，扬帆起航，驶向各自的星辰大海，</span></div>
+            <div class="line speaker-yangwu"><span class="speaker">杨乌：</span><span class="text">未来之路，或有荆棘，或有风浪；</span></div>
+            <div class="line speaker-lingzhang"><span class="speaker">玲张：</span><text class="text">但请相信，MBA赋予我们的智慧与力量，</text></div>
+            <div class="line speaker-lingzhang"><span class="speaker">玲张：</span><span class="text">以创新为桨，以担当为帆，直面挑战，勇立潮头！</span></div>
+        </div>
+
+        <div class="section" id="part6-climax">
+            <div class="line speaker-shaopeng" style="justify-content: center;"><span class="speaker">邵彭：</span><span class="text">让我们，怀揣感恩，铭记情谊，带着梦想，肩负期许，</span></div>
+            <div class="line" style="font-size: 1.8em; justify-content: center; margin-top: 1.5em; color: var(--highlight-color); font-weight: bold; text-shadow: 0 0 8px var(--highlight-color);"><span class="text">从此刻，启程！</span></div>
+            
+            <div class="divider"></div>
+            
+            <!-- 最终垂直排版祝福语 (2x2矩阵) -->
+            <div class="final-blessing-section">
+                <div class="final-blessing-item">
+                    <div class="blessing-intro">
+                        <span class="intro-part1">话筒四人：</span>
+                        <span class="intro-part2">祝福吾师！</span>
+                    </div>
+                    <div class="blessing-text-horizontal">
+                        <div style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.2rem; line-height: 1.5; text-shadow: none; letter-spacing: normal; color: var(--speaker-color);">八人齐：</div>
+                        <div>桃李芬芳，学术长青！</div>
+                    </div>
+                </div>
+                <div class="final-blessing-item">
+                    <div class="blessing-intro">
+                        <span class="intro-part1">话筒四人：</span>
+                        <span class="intro-part2">祝福同窗！</span>
+                    </div>
+                    <div class="blessing-text-horizontal">
+                        <div style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.2rem; line-height: 1.5; text-shadow: none; letter-spacing: normal; color: var(--speaker-color);">八人齐：</div>
+                        <div>前程似锦，大展宏图！</div>
+                    </div>
+                </div>
+                <div class="final-blessing-item">
+                    <div class="blessing-intro">
+                        <span class="intro-part1">话筒四人：</span>
+                        <span class="intro-part2">祝福自己！</span>
+                    </div>
+                    <div class="blessing-text-horizontal">
+                        <div style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.2rem; line-height: 1.5; text-shadow: none; letter-spacing: normal; color: var(--speaker-color);">八人齐：</div>
+                        <div>不忘初心，步履不停！</div>
+                    </div>
+                </div>
+                <div class="final-blessing-item">
+                    <div class="blessing-intro">
+                        <span class="intro-part1">话筒四人：</span>
+                        <span class="intro-part2">祝福明天！</span>
+                    </div>
+                    <div class="blessing-text-horizontal">
+                        <div style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.2rem; line-height: 1.5; text-shadow: none; letter-spacing: normal; color: var(--speaker-color);">八人齐：</div>
+                        <div>世界因我们的奋斗而更加美好！</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>
